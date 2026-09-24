@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double v0, angulo, rad;
+    double g = 9.8, k = 0.5;
+    double t, x, y, vx, vy;
+    double alcance = 0, tempoVoo = 0;
+
+    printf("Digite a velocidade inicial e o angulo: ");
+    scanf("%lf %lf", &v0, &angulo);
+
+    rad = angulo * (3.14159 / 180);
+
+    vx = v0 * cos(rad);
+    vy = v0 * sin(rad);
+
+    x = 0;
+    y = 0;
+    t = 0;
+
+    // loop de tempo, incrementando 0.01s
+    while (y >= 0) {
+        vy = vy - g * 0.01;
+        vx = vx - k * 0.01; // atrito simples reduzindo vx
+        x = x + vx * 0.01;
+        y = y + vy * 0.01;
+        t = t + 0.01;
+
+        if (y < 0) break;
+    }
+
+    alcance = x;
+    tempoVoo = t;
+
+    printf("Alcance maximo: %.2f m\n", alcance);
+    printf("Tempo de voo: %.2f s\n", tempoVoo);
+
+    return 0;
+}
