@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    double graus, radianos;
+    double pi = 3.141592;
+
+    printf("Digite o angulo em graus: ");
+    scanf("%lf", &graus);
+
+    radianos = graus * pi / 180;
+
+    printf("%.4f rad\n", radianos);
+
+    return 0;
+}
