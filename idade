@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int diasTotais, anos, meses, dias;
+
+    scanf("%d", &diasTotais);
+
+    anos = diasTotais / 365;
+    meses = (diasTotais % 365) / 30;
+    dias = (diasTotais % 365) % 30;
+
+    printf("%d anos e %d meses e %d dias\n", anos, meses, dias);
+
+    return 0;
+}
