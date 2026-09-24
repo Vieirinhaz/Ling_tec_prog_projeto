@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c, maiorAB, maior;
+
+    scanf("%lf", &a);
+    scanf("%lf", &b);
+    scanf("%lf", &c);
+
+    // maior entre a e b
+    maiorAB = (a + b + fabs(a - b)) / 2;
+
+    // maior entre o resultado anterior e c
+    maior = (maiorAB + c + fabs(maiorAB - c)) / 2;
+
+    printf("%.2f eh o maior\n", maior);
+
+    return 0;
+}
