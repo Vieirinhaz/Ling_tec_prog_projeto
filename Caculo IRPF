@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+double calculaIRPF(double salarioBase) {
+    double irpf;
+
+    if (salarioBase <= 2259.20) {
+        irpf = 0;
+    } else if (salarioBase <= 2826.65) {
+        irpf = (salarioBase * 0.075) - 169.44;
+    } else if (salarioBase <= 3751.05) {
+        irpf = (salarioBase * 0.15) - 381.44;
+    } else if (salarioBase <= 4664.68) {
+        irpf = (salarioBase * 0.225) - 662.77;
+    } else {
+        irpf = (salarioBase * 0.275) - 896.00;
+    }
+
+    return irpf;
+}
+
+int main() {
+    double salarioBase, irpf;
+
+    printf("Digite o salario base: ");
+    scanf("%lf", &salarioBase);
+
+    irpf = calculaIRPF(salarioBase);
+
+    printf("Desconto IRPF: R$ %.2f\n", irpf);
+
+    return 0;
+}
