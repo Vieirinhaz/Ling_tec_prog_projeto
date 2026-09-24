@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    double total = 780000.00;
+    double primeiro, segundo, terceiro;
+
+    primeiro = total * 0.46;
+    segundo = total * 0.32;
+    terceiro = total - primeiro - segundo;
+
+    printf("Primeiro: R$ %.2f\n", primeiro);
+    printf("Segundo: R$ %.2f\n", segundo);
+    printf("Terceiro: R$ %.2f\n", terceiro);
+
+    return 0;
+}
